@@ -86,7 +86,7 @@ Seuraavaksi käynnistin koneen live-ympäristöön ja varmistin selaimen avulla,
 - Salasana:
 - Log in automatically without password: x
 
-!["All done. Debian 13 has been installed on your computer"](../kuvat/hello-ansible/raporttikuva4_jabuuttia.png)
+!["All done. Debian 13 has been installed on your computer"](kuvat/hello-ansible/raporttikuva4_jabuuttia.png)
 
 Asennuksen valmistuttua käynnistin koneen uudelleen ja varmistin tein saman testin selaimella. Sitten päivitin järjestelmän pakettiluettelot ja asennetut paketit, asensin ja otin käyttöön palomuurin sekä Guest Additions-lisäosat.
 
@@ -131,8 +131,7 @@ Sitten varmistin, että ssh toimii:
 ssh localhost
 w
 ````
-
-![SSH:n toiminnan onnistunut testaus](../kuvat/hello-ansible/raporttikuva10_sshtestaus.png)
+![SSH:n toiminnan onnistunut testaus](kuvat/hello-ansible/raporttikuva10_sshtestaus.png)
 
 ## c) Pubkey. Automatisoi ssh-kirjautuminen julkisella avaimella.
 ### SSH-kirjautumisen automatisoiminen julkisella avaimella
@@ -157,23 +156,21 @@ sudo apt-get install ansible
 ````
 Tämän jälkeen loin kotihakemistoon ansible-hakemiston ja siirryin siihen. Sinne loin *hosts.ini*-tiedoston, johon määrittelin halliteltavaksi koneeksi localhostin. (ja lisäsin hosts.ini-tiedostoon Python-tulkin määrityksen, jotta Ansible käyttäisi järjestelmän Python 3 -tulkkia eikä näyttäisi siitä toistuvaa varoitusta)
 
-
-![hosts.ini](<../kuvat/hello-ansible/raporttikuva12_hosts - Copy.png>)
+![hosts.ini](<kuvat/hello-ansible/raporttikuva12_hosts - Copy.png>)
 
 Seuraavaksi testasin, että Ansible pystyi suorittamaan komennon hallittavalla koneella SSH-yhteyden kautta:
 ````
 ansible all -a 'uptime' -i hosts.ini
 ````
-
-![Ansiblen onnistunut testaus](../kuvat/hello-ansible/raporttikuva13_ansibletestaus.png)
+![Onnistunut Ansible testi](kuvat/hello-ansible/raporttikuva13_ansibletestaus.png)
 
 Sitten loin *ansible.cfg*-tiedoston ja määritin siihen oletusinventaarion, jotta minun ei tarvitse syöttää sitä erikseen jokaisen komennon yhteydessä.
 
-![ansible.cfg](../kuvat/hello-ansible/raporttikuva14_configi.png)
+![ansible.cfg](kuvat/hello-ansible/raporttikuva14_configi.png)
 
 Seuraavaksi loin *site.yml*-tiedoston roolien kohdentamista varten. Tässä tapauksessa määrittelin hello-roolin ajettavaksi kaikilla inventaarion määrittämillä palvelimilla.
 
-![site.yml](../kuvat/hello-ansible/raporttikuva15_siteyml.png)
+![site.yml](kuvat/hello-ansible/raporttikuva15_siteyml.png)
 
 Tämän jälkeen loin roolille tarvittavat hakemistot:
 ````
@@ -181,7 +178,7 @@ mkdir -p roles/hello/tasks/
 ````
 Tämän jälkeen loin tiedoston *roles/hello/tasks/main.yml* ja määrittelin siihen tehtävän, joka luo /tmp/*hello-ansible*-tiedoston ja kirjoittaa siihen tekstin.
 
-![main.yml](../kuvat/hello-ansible/raporttikuva16_taski.png)
+![main.yml](kuvat/hello-ansible/raporttikuva16_taski.png)
 
 Sitten oli aika suorittaa playbook seuraavalla komennolla:
 ````
@@ -189,11 +186,11 @@ ansible-playbook site.yml
 ````
 Tarkistin suorituksen tulosteesta, että toiminto onnistui ongelmitta.
 
-![playbook](../kuvat/hello-ansible/raporttikuva17_playbook.png)
+![playbook](kuvat/hello-ansible/raporttikuva17_playbook.png)
 
 Ja lopuksi varmistin vielä, että tiedosto oli luotu ja sen sisältö oli oikea.
 
-![Varmistus](../kuvat/hello-ansible/raporttikuva18_jahommatoimii.png)
+![Varmistus](kuvat/hello-ansible/raporttikuva18_jahommatoimii.png)
 
 ## Lähteet
 Karvinen, T. 2021. Install debian on virtual box. Luettavissa: https://terokarvinen.com/2021/install-debian-on-virtualbox/. Luettu: 23.10.2026

@@ -1,4 +1,4 @@
-# 1. Hei Ansiblen maailma!
+# h1 Hei Ansiblen maailma!
 
 ## x) Lue ja tiivistä
 
@@ -193,6 +193,7 @@ Ja lopuksi varmistin vielä, että tiedosto oli luotu ja sen sisältö oli oikea
 ![Varmistus](kuvat/hello-ansible/raporttikuva18_jahommatoimii.png)
 
 ## Lähteet
+
 Karvinen, T. 2021. Install debian on virtual box. Luettavissa: https://terokarvinen.com/2021/install-debian-on-virtualbox/. Luettu: 23.10.2026
 
 Karvinen, T. 2026. Hello Ansible. Luettavissa: https://terokarvinen.com/hello-ansible/. Luettu 23.10.2026

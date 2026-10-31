@@ -361,9 +361,9 @@ Seuraavaksi suoritin playbookin.
 
 Lopuksi varmistin, että tiedosto onnistuneesti luotiin ja oikeudet toimivat.
 
-![Tiedosto onnistuneesti luotu](kuvat/voileipä/4.3_homma_toimii.png)
+![Tiedoston sisältö ja käyttöoikeudet löytyivät](kuvat/voileipä/4.3_homma_toimii.png)
 
-Kuvan yläreuna osoittaa, että tiedosto avautuu käyttäjälle `mtsmk` oikein. Alareunasta näkyvä vain luku -tila puolestaan varmistaa, että myös rajoitetut kirjoitusoikeudet pätevät.
+Kuten kuva kertoo, tiedoston sisältö on oikea ja halutut käyttöoikeudet löytyvät.
 
 ## e) Jotain muuta.
 ### Tehdään rooli, joka poistaa edellisessä tehtävässä luodun tiedoston.

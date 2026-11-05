@@ -30,9 +30,9 @@ Oma huomio: Tässäkin järjestelmässä on konfiguroitu salasanaton sudon käyt
 
 ### Passwordless Sudo with Ansible [(terokarvinen.com)](https://terokarvinen.com/passwordless-sudo-with-ansible/)
 
-- Artikkelissa käsitellään salasanattoman sudon käyttöön ottoa Ansiblella
+- Artikkelissa käsitellään salasanattoman sudon käyttöön ottoa Ansiblella.
 
-- `become: true` mahdollistaa tehtävien suorittamisen sudo-oikeuksilla
+- `become: true` mahdollistaa tehtävien suorittamisen sudo-oikeuksilla.
 
 Oma huomio:
 
@@ -52,13 +52,13 @@ Sudo-salasanan kysyminen playbookkia suoritettaessa onnistuu laittamalla `ansibl
 
 - `dest`: Ehdoton etäpolku, johon tiedosto kopioidaan.
 
-- `src`: Paikallinen polku kopioitavaan tiedostoon tai hakemisto
+- `src`: Paikallinen polku kopioitavaan tiedostoon tai hakemisto.
 
-- `owner`: Tiedoston/hakemiston omistajaksi asetettava käyttäjänimi
+- `owner`: Tiedoston/hakemiston omistajaksi asetettava käyttäjänimi.
 
-- `group`: Tiedoston/hakemiston omistajaksi asetettava ryhmänimi
+- `group`: Tiedoston/hakemiston omistajaksi asetettava ryhmänimi.
 
-- `mode`: Tiedostolle annettavat käyttöoikeudet (Esim. "0644")
+- `mode`: Tiedostolle annettavat käyttöoikeudet (Esim. "0644").
 
 ##### Esimerkki
 
@@ -76,18 +76,18 @@ Kopioi tiedosto, sen omistaja ja käyttöoikeudet:
 
 #### ansible-doc apt
 
-- Hallitsee apt-paketteja
+- Hallitsee apt-paketteja.
 
 ##### Nimetyt optiot
 
-- `name`: Käsiteltävän paketin tai pakettien nimi
+- `name`: Käsiteltävän paketin tai pakettien nimi.
 
 - `state`: Paketin haluttu tila
     - `present`: Asennettu
     - `absent`: Poistettu
     - `latest`: Viimeisin versio
 
-- `update_cache`: Päivittää pakettivaraston ennen paketin käsittelyä
+- `update_cache`: Päivittää pakettivaraston ennen paketin käsittelyä.
 
 ##### Esimerkki
 
@@ -106,15 +106,15 @@ Poista paketti:
 
 ##### Nimetyt optiot
 
-- `path`: Polku muokattavaan tiedostoon
+- `path`: Polku muokattavaan tiedostoon.
 
-- `recurse`: Rekursiivisesti asettaa määritetyn tiedoston attribuutit hakemiston sisällölle
+- `recurse`: Rekursiivisesti asettaa määritetyn tiedoston attribuutit hakemiston sisällölle.
 
-- `src`: Polku, johon luootava symlinkki viittaa
+- `src`: Polku, johon luootava symlinkki viittaa.
 
-- `state`: Kohteen tyyppi tai tila
+- `state`: Kohteen tyyppi tai tila.
 
-- `owner / group / mode`: Omistaja, ryhmä ja oikeudet (Kuten copy-moduulissa) 
+- `owner / group / mode`: Omistaja, ryhmä ja oikeudet (Kuten copy-moduulissa). 
 
 
 ##### Esimerkki
@@ -136,19 +136,19 @@ Muokkaa tiedoston omistajaa, ryhmää ja oikeuksia:
 
 ##### Nimetyt optiot
 
-- `name`: Luotavan, muokattavan tai poistettavan käyttäjän käyttäjätunnus
+- `name`: Luotavan, muokattavan tai poistettavan käyttäjän käyttäjätunnus.
 
-- `create_home`: Luodaanko käyttäjälle kotihakemisto (Oletuksena kyllä)
+- `create_home`: Luodaanko käyttäjälle kotihakemisto (Oletuksena kyllä).
 
-- `comment`: Kuvaus käyttäjästä
+- `comment`: Kuvaus käyttäjästä.
 
-- `groups`: Lista ryhmistä, joihin käyttäjä lisätään
+- `groups`: Lista ryhmistä, joihin käyttäjä lisätään.
 
-- `shell`: Käyttäjän oletusshell
+- `shell`: Käyttäjän oletusshell.
 
-- `state`: Onko käyttäjä olemassa
+- `state`: Onko käyttäjä olemassa.
 
-- `system`: Onko kyseessä järjestelmäkäyttäjä
+- `system`: Onko kyseessä järjestelmäkäyttäjä.
 
 ##### Esimerkki
 
@@ -163,13 +163,13 @@ Luo käyttäjä `johnd` kotihakemistoineen:
 
 #### ansible-doc authorized-key
 
-- Lisää tai poistaa SSH-avaimia määrättyjen käyttäjien authorized_keys-tiedostosta
+- Lisää tai poistaa SSH-avaimia määrättyjen käyttäjien authorized_keys-tiedostosta.
 
 ##### Nimetyt optiot
 
-- `user`: Paikallisen käyttäjän nimi, jonka SSH-avaimia muokataan
+- `user`: Paikallisen käyttäjän nimi, jonka SSH-avaimia muokataan.
 
-- `key`: Itse SSH-avain merkkijonona tai polku/URL, josta avain haetaan
+- `key`: Itse SSH-avain merkkijonona tai polku/URL, josta avain haetaan.
 
 ##### Esimerkki
 
@@ -185,6 +185,8 @@ Aseta valtuutettu avain linkistä:
 
 ## a) Sudoless. Tee ansiblea varten tunnus, jolla voi käyttää sudoa ilman salasanaa.
 ### Käyttäjän ja ryhmän luominen sekä käyttäjän lisääminen ryhmään.
+
+Tein tämän tehtävän Tero Karvisen [Sudo without password](https://terokarvinen.com/passwordless-sudo/)-artikkelin pohjalta.
 
 Ensimmäiseksi loin käyttäjän nimeltä `hiekka`.
 
@@ -221,15 +223,17 @@ Lopuksi varmistin salasanattoman sudon toiminnan ottamalla SSH-yhteyden ``hiekka
 ## b) Antero. Tee salasanaton, automaattisesti ssh:lla kirjautuva tunnus Ansiblella.
 ### Sitten laitetaan Ansible suorittamaan vastaava tehtävä.
 
-Ensimmäiseksi loin uuden roolin `sudoless`, jonka sisälle loin hakemiston `tasks`, jonne lisäsin tiedoston `main.yml`
+Tein tämän tehtäven Tero Karvisen [Passwordless Sudo with Ansible](https://terokarvinen.com/passwordless-sudo-with-ansible/)-artikkelin pohjalta.
+
+Ensimmäiseksi loin uuden roolin `sudoless`, jonka sisälle loin hakemiston `tasks`, jonne lisäsin tiedoston `main.yml`.
 
 ![ansible-hakemiston puu äskeisen vaiheen jälkeen](kuvat/voileipä/2.1_ansible_tree.png)
 
 `main.yml`-tiedostoon lisäsin seuraavan sisällön, joka:
-1. Luo ryhmän `sudoless`
-2. Luo `noita`-nimisen käyttäjän ja lisää sen ryhmiin `sudoless`, `sudo` ja `adm`
-3. Lisää määritetyn julkisen avaimen käyttäjän `noita` valtuutettujen avainten listalle salasanatonta SSH-kirjautumista varten
-4. Luo tiedoston `/etc/sudoers.d/sudoless`, joka sallii kaikille `sudoless`-ryhmän jäsenille sudo-oikeuksien käyttämisen ilman salasanakyselyä
+1. Luo ryhmän `sudoless`.
+2. Luo `noita`-nimisen käyttäjän ja lisää sen ryhmiin `sudoless`, `sudo` ja `adm`.
+3. Lisää määritetyn julkisen avaimen käyttäjän `noita` valtuutettujen avainten listalle salasanatonta SSH-kirjautumista varten.
+4. Luo tiedoston `/etc/sudoers.d/sudoless`, joka sallii kaikille `sudoless`-ryhmän jäsenille sudo-oikeuksien käyttämisen ilman salasanakyselyä.
 ```
 - group:
     name: "sudoless"
@@ -266,20 +270,20 @@ Sitten oli aika suorittaa playbook.
 
 Tuloksista ilmenee, että järjestelmään luotiin onnistuneesti uusi käyttäjä ``noita`` ja määritetty SSH-avain lisättiin sen valtuutettujen avainten luetteloon. Sen sijaan ``sudoless-ryhmää`` tai ``sudoless``-asetustiedostoa ei luotu uudelleen, sillä ne olivat jo valmiiksi olemassa järjestelmässä edellisen tehtävän jäljiltä.
 
-Lopuksi vielä varmistin salasanattoman sudon toiminnan ottamalla SSH-yhteyden ``noita``-käyttäjään ja testaamalla sudo-komentoa
+Lopuksi vielä varmistin salasanattoman sudon toiminnan ottamalla SSH-yhteyden ``noita``-käyttäjään ja testaamalla sudo-komentoa.
 
 ![Ansiblen luoman sudoless-käyttäjän onnistunut testaus](kuvat/voileipä/2.3_ansible_sudoless_user_test.png)
 
 ## c) Package. Asenna kaksi pakettia ansiblella.
 ### Asennetaan kaksi pakettia Ansiblella.
 
-Ensimmäiseksi loin uuden roolin `tupac`, jonka sisälle loin hakemiston `tasks`, jonne lisäsin tiedoston `main.yml`
+Ensimmäiseksi loin uuden roolin `tupac`, jonka sisälle loin hakemiston `tasks`, jonne lisäsin tiedoston `main.yml`.
 
 ![Ansible-hakemiston puu äskeisen vaiheen jälkeen](kuvat/voileipä/3.1_ansibletree1.png)
 
 `main.yml`-tiedoston lisäsin seuraavan sisällön, jossa määritetään:
-1. Päivitä pakettilistat jos edellisestä kerrasta on kulunut 3600 sekuntia
-2. Varmistaa, että seuraavista paketeista on asennettu viimeisimmät versiot: git ja htop
+1. Päivitä pakettilistat jos edellisestä kerrasta on kulunut 3600 sekuntia.
+2. Varmistaa, että seuraavista paketeista on asennettu viimeisimmät versiot: git ja htop.
 
 ```
 - name: Paketti update
@@ -321,7 +325,7 @@ Kuten kuvasta näkyy, muutos tapahtui. Tässä vaiheessa myös tajusin kommentoi
 ## d) File. Kirjoita orjalle useamman rivin mittainen tiedosto Ansiblella. Määrittele sen omistaja, omistava ryhmä ja oikeudet. Käytä oikeuksille oktaalinumeroa ja selitä, mitä kukin käyttäjä saa tehdä tuolle tiedostolle.
 ### Monirivisen tiedoston luonti
 
-Jälleen loin uuden roolin `defright`, jonka sisälle loin hakemiston `tasks`, jonne lisäsin tiedoston `main.yml`
+Jälleen loin uuden roolin `defright`, jonka sisälle loin hakemiston `tasks`, jonne lisäsin tiedoston `main.yml`.
 
 ![anssi-puu äskeisen vaiheen jälkeen](kuvat/voileipä/4.1_ans_tree.png)
 
@@ -330,10 +334,11 @@ Jälleen loin uuden roolin `defright`, jonka sisälle loin hakemiston `tasks`, j
 2. On monta riviä sisältöä
 3. Määritetään omistajaksi `noita`
 4. Määritetään ryhmäksi `noita`
-5. Määritetään oikeuksiksi `0644` eli `-rw-r--r--`.
-    1. `6 / rw-` = Omistajalla on luku- ja kirjoitusoikeus
-    2. `4 / r--` = Ryhmällä on lukuoikeus
-    3. `4 / r--` = Muilla on lukuoikeus
+5. Määritetään oikeuksiksi `0644` eli `-rw-r--r--`
+    1. `0` = Erityisasetuksia ei ole asetettu
+    2. `6 / rw-` = Omistajalla on luku- ja kirjoitusoikeus
+    3. `4 / r--` = Ryhmällä on lukuoikeus
+    4. `4 / r--` = Muilla on lukuoikeus
 ```
 - copy:
     dest: /tmp/noita-monirivi

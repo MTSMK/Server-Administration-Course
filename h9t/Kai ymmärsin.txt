@@ -1,0 +1,30 @@
+marras 05 19:28:57 pHallinta sudo[12298]:    mtsmk : TTY=pts/0 ; PWD=/home/mtsmk ; USER=root ; COMMAND=/usr/bin/journalctl --grep caddy -n 30
+marras 05 19:27:57 pHallinta sudo[12277]:    mtsmk : TTY=pts/0 ; PWD=/home/mtsmk ; USER=root ; COMMAND=/usr/bin/journalctl --grep caddy -n 30
+marras 05 19:24:02 pHallinta sudo[12209]:    mtsmk : TTY=pts/0 ; PWD=/home/mtsmk ; USER=root ; COMMAND=/usr/bin/journalctl --grep caddy -n 30
+marras 05 18:34:48 pHallinta systemd[1]: Started caddy.service - Caddy.
+marras 05 18:34:48 pHallinta caddy[11551]: {"level":"info","ts":1793896488.0855284,"msg":"autosaved config (load with --resume flag)","file":"/var/lib/caddy/.config/caddy/autosave.json"}
+marras 05 18:34:48 pHallinta caddy[11551]: {"level":"info","ts":1793896488.0842507,"logger":"tls","msg":"cleaning storage unit","description":"FileStorage:/var/lib/caddy/.local/share/caddy"}
+marras 05 18:34:48 pHallinta caddy[11551]: {"level":"info","ts":1793896488.0788105,"msg":"using provided configuration","config_file":"/etc/caddy/Caddyfile","config_adapter":""}
+marras 05 18:34:48 pHallinta caddy[11551]: MEMORY_PRESSURE_WATCH=/sys/fs/cgroup/system.slice/caddy.service/memory.pressure
+marras 05 18:34:48 pHallinta caddy[11551]: HOME=/var/lib/caddy
+marras 05 18:34:48 pHallinta caddy[11551]: LOGNAME=caddy
+marras 05 18:34:48 pHallinta caddy[11551]: USER=caddy
+marras 05 18:34:48 pHallinta caddy[11551]: caddy.Version=2.6.2
+marras 05 18:34:48 pHallinta caddy[11551]: caddy.ConfigAutosavePath=/var/lib/caddy/.config/caddy/autosave.json
+marras 05 18:34:48 pHallinta caddy[11551]: caddy.AppConfigDir=/var/lib/caddy/.config/caddy
+marras 05 18:34:48 pHallinta caddy[11551]: caddy.AppDataDir=/var/lib/caddy/.local/share/caddy
+marras 05 18:34:48 pHallinta caddy[11551]: caddy.HomeDir=/var/lib/caddy
+marras 05 18:34:47 pHallinta systemd[1]: Starting caddy.service - Caddy...
+marras 05 18:34:47 pHallinta systemd[1]: Stopped caddy.service - Caddy.
+marras 05 18:34:47 pHallinta systemd[1]: caddy.service: Deactivated successfully.
+marras 05 18:34:47 pHallinta systemd[1]: Stopping caddy.service - Caddy...
+marras 05 18:34:47 pHallinta polkitd[763]: Operator of unix-session:2 successfully authenticated as unix-user:mtsmk to gain TEMPORARY authorization for action org.freedesktop.systemd1.manage-units for system-bus-name::1.93 [systemctl restart caddy] (owned by unix-user:mtsmk)
+marras 05 18:33:44 pHallinta sudo[11456]:    mtsmk : TTY=pts/0 ; PWD=/home/mtsmk ; USER=root ; COMMAND=/usr/bin/dd bs=4k of=/etc/caddy/Caddyfile
+marras 05 18:33:38 pHallinta sudo[11451]:    mtsmk : TTY=pts/0 ; PWD=/home/mtsmk ; USER=root ; COMMAND=/usr/bin/dd bs=4k of=/etc/caddy/Caddyfile
+marras 05 18:32:40 pHallinta sudo[11424]:    mtsmk : TTY=pts/0 ; PWD=/home/mtsmk ; USER=root ; COMMAND=/usr/bin/editor -- micro /etc/caddy/Caddyfile
+marras 05 18:31:16 pHallinta sudo[11391]:    mtsmk : TTY=pts/0 ; PWD=/home/mtsmk ; USER=root ; COMMAND=/usr/bin/editor -- micro /etc/caddy/Caddyfile
+marras 05 17:57:47 pHallinta sudo[10478]:    mtsmk : TTY=pts/0 ; PWD=/home/mtsmk ; USER=root ; COMMAND=/usr/bin/dd bs=4k of=/usr/share/caddy/index.html
+marras 05 17:57:23 pHallinta sudo[10461]:    mtsmk : TTY=pts/0 ; PWD=/home/mtsmk ; USER=root ; COMMAND=/usr/bin/dd bs=4k of=/usr/share/caddy/index.html
+marras 05 17:56:53 pHallinta sudo[10437]:    mtsmk : TTY=pts/0 ; PWD=/home/mtsmk ; USER=root ; COMMAND=/usr/bin/cp -r /usr/share/caddy/index.html /usr/share/caddy/index_varmuuskopio..html
+marras 05 17:50:12 pHallinta systemd[1]: Started caddy.service - Caddy.
+marras 05 17:50:12 pHallinta caddy[9916]: {"level":"info","ts":1793893812.1576912,"msg":"autosaved config (load with --resume flag)","file":"/var/lib/caddy/.config/caddy/autosave.json"}

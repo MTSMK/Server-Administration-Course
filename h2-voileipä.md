@@ -6,7 +6,7 @@
 
 - Artikkelissa käsitellään salasanattoman sudon käyttöön ottoa Linuxissa.
 
-- Sudoers-aseetuksilla voidaan antaa käyttäjälle tai ryhmälle oikeus suorittaa komentoja pääkäyttäjänoikeuksilla ilman salasanan kysymistä.
+- Sudoers-asetuksilla voidaan antaa käyttäjälle tai ryhmälle oikeus suorittaa komentoja pääkäyttäjänoikeuksilla ilman salasanan kysymistä.
 
 ```
 $ cat /etc/sudoers.d/sudoless
@@ -44,7 +44,7 @@ Sudo-salasanan kysyminen playbookkia suoritettaessa onnistuu laittamalla `ansibl
 
 #### ansible-doc copy
 
-- Moduuli kopioi tiedostoja tai hakemisto rakenteita joko paikalliselta tai etäkoneelta toiseen paikkaan etäkoneella. Tiedoston metatiedot voidaan määrittää samalla, vaikka kohde olisi jo olemassa.
+- Moduuli kopioi tiedostoja tai hakemistorakenteita joko paikalliselta tai etäkoneelta toiseen paikkaan etäkoneella. Tiedoston metatiedot voidaan määrittää samalla, vaikka kohde olisi jo olemassa.
 
 ##### Nimetyt optiot
 
@@ -87,7 +87,7 @@ Kopioi tiedosto, sen omistaja ja käyttöoikeudet:
     - `absent`: Poistettu
     - `latest`: Viimeisin versio
 
-- `update_cache`: Päivittää paketti varaston ennen paketin käsittelyä
+- `update_cache`: Päivittää pakettivaraston ennen paketin käsittelyä
 
 ##### Esimerkki
 
@@ -186,7 +186,7 @@ Aseta valtuutettu avain linkistä:
 ## a) Sudoless. Tee ansiblea varten tunnus, jolla voi käyttää sudoa ilman salasanaa.
 ### Käyttäjän ja ryhmän luominen sekä käyttäjän lisääminen ryhmään.
 
-Ensimmäiseksi loin käyttjän nimeltä `hiekka`.
+Ensimmäiseksi loin käyttäjän nimeltä `hiekka`.
 
     sudo adduser hiekka
 
@@ -200,13 +200,13 @@ Sitten lisäsin juuri luomani käyttäjän luomaani ryhmään.
 
 ![Käyttäjän ja ryhmän luonti](kuvat/voileipä/1.1_user_and_group_creation.png)
 
-### Salasanattoman sudon käytön mahdollistavan aseutksen luonti
+### Salasanattoman sudon käytön mahdollistavan asetuksen luonti
 
 Tässä vaiheessa avasin taustalle toiseen terminaaliin pääkäyttäjän istunnon komennolla.
 
     sudo -i
 
-Tämän jälkeen perusikkunassa loin tiedoston `sudoless` hakemistoon `/etc/sudoers-d/`.
+Tämän jälkeen perusikkunassa loin tiedoston `sudoless` hakemistoon `/etc/sudoers.d/`.
 
     sudo visudo /etc/sudoers.d/sudoless
 
@@ -249,7 +249,7 @@ Ensimmäiseksi loin uuden roolin `sudoless`, jonka sisälle loin hakemiston `tas
     mode: "0644"
 ```
 
-Seuravaksi lisäsin `sudoless`-roolin `site.yml`-tiedostoon sen ajamista varten. Lisäksi määritin tiedostoon asetuksen `become: true`, jotta Ansible suorittaa tehtävät kohdejärjestelmässä sudo-oikeuksilla.
+Seuraavaksi lisäsin `sudoless`-roolin `site.yml`-tiedostoon sen ajamista varten. Lisäksi määritin tiedostoon asetuksen `become: true`, jotta Ansible suorittaa tehtävät kohdejärjestelmässä sudo-oikeuksilla.
 
 `site.yml`-sisältö tämän vaiheen jälkeen:
 
@@ -374,7 +374,7 @@ Eli demonstroidaan `ansible.builtin.file`-moduulin `absent`-tilaa. Sen avulla vo
 
 Jälleen uusi `roles/roolin_nimi/tasks/main.yml`. Tällä kertaa roolin nimeksi päätyi `del`.
 
-![anssi-puu äskeisen vaihen jälkeen](kuvat/voileipä/5.1_tree.png)
+![anssi-puu äskeisen vaiheen jälkeen](kuvat/voileipä/5.1_tree.png)
 
 Lisätään `main.yml`-tiedostoon seuraava `ansible-doc`:ista peräisin oleva pätkä, jossa:
 1. Määritetään käsiteltävä tiedosto

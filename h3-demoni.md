@@ -88,7 +88,7 @@ Sitten oli aika tehdä sama, mutta Nginx:llä. Ensimmäiseksi, taas otin aiemmin
 
 ![status apache2](kuvat/demoni/b.1_apassinsammutus.png)
 
-Sitten taas varmistin, että demoni pelaa komennolla `sudo systemctl status nginx.service`.
+Seuraavaksi asensin nginx:n komennolla `sudo apt install nginx` ja varmistin, että demoni pelaa komennolla `sudo systemctl status nginx.service`.
 
 ![status nginx](kuvat/demoni/b.2_nginxasennus.png)
 

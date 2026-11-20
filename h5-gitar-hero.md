@@ -206,6 +206,10 @@ Lopuksi tarkistin lokista, mitä oli tapahtunut.
 
 ![loki](kuvat/gitar-hero/e11_loki.png)
 
+## f) Hae pari projektiin Moodlen keskustelusta.
+
+Pari löydetty
+
 ## Lähteet
 
 Chacon and Straub, 2014. Pro Git, 2nd Edition. Luettavissa: https://git-scm.com/book/en/v2. Luettu 20.11.2026.
